@@ -26,7 +26,8 @@ Land the architectural skeleton for `nukm-core` and `nukm-cli` as a single revie
 
 **`nukm-cli`:**
 - Command stubs using `clap` derive: `scan`, `clean`, `rules`, `doctor`. Each prints a one-line "not yet implemented" message and exits `0`.
-- Shared flags surfaced at the top level: `--json`, `--dry-run` (default `true`), `--execute` (mutually exclusive with `--dry-run`).
+- Shared flags surfaced at the top level: `--json`, `--execute`. Absence of `--execute` implies dry-run. Do not add a `--dry-run` flag. Help text for `scan` and `clean` must explain the implicit default explicitly.
+- Deferred contract (implementation lands in B1, documented here for CLI scaffolding awareness): when a destructive command runs without `--execute`, output is prefixed per-line with `[DRY-RUN]` and preceded by the banner `DRY RUN: no changes will be made. Pass --execute to apply.`. Stubs in C may print a single "not yet implemented" line and exit `0`; no banner needed until B1.
 - Binary name remains `nukm`.
 
 **Workspace `Cargo.toml`:**

@@ -41,7 +41,7 @@ Deliverables:
 - [ ] `docs/ecosystem-fit/{rust,node,go,java}.md` (Magnus)
 - [ ] `docs/ecosystem-fit/{docker,python}.md` (Kenji)
 - [ ] `tests/` structure, `tests/common/mod.rs` with `assert_fs` fixture helper stubs, one compile-only sanity test per crate (Ingrid)
-- [ ] `cargo-nextest` config if adopted; decide in C and record as ADR-0004 or defer
+- [ ] `cargo-nextest` config or deferral note; adoption produces ADR-0004, deferral produces a one-line note in the C-phase commit message. Neither adoption nor deferral blocks C-phase exit.
 - [ ] `ROADMAP.md` at repo root as multi-phase index pointing to this plan
 
 **`ActionManifest` scope guardrail.** In C: field definitions, `serde` serialisation contract (JSON), doc comments describing intent. Deferred to B1: on-disk persistence format, storage location, naming, rotation / retention, concurrency and locking.
@@ -62,7 +62,8 @@ Deliverables:
 - [ ] Filesystem-age scorer
 - [ ] Git safety gate via `git2` (clean state check, stash check)
 - [ ] `trash` crate integration
-- [ ] Dry-run default, `--execute` flag
+- [ ] Destructive operations require `--execute`; absence implies dry-run. No `--dry-run` flag exists.
+- [ ] Dry-run output clearly marked: per-line `[DRY-RUN]` prefix and header banner (`DRY RUN: no changes will be made. Pass --execute to apply.`) at the top of every scan output.
 - [ ] `nukm scan` and `nukm clean` for Rust only
 - [ ] Integration tests with `assert_fs` fixtures
 - [ ] `tests/corpus/` scaffold; Rust fixtures (clean, dirty-git, stashed, ancient > 90d, recent < 7d)
@@ -71,7 +72,7 @@ Deliverables:
 - [ ] `proptest` introduced with its first real caller
 - [ ] Tag `0.1.0-alpha`
 
-**Exit criteria:** `nukm scan P:\Work\Programming` on the real machine produces correct, actionable output; CI matrix green on all three platforms.
+**Exit criteria:** `nukm scan ~/Work/Programming` (or an equivalent repo tree on the developer machine) produces correct, actionable output; CI matrix green on all three platforms.
 
 ### Days 11-17 (B2): Node detector
 **Lead agent:** Magnus. **Support:** Arthur (abstraction review), Ingrid (fixtures).
