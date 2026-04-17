@@ -1,0 +1,21 @@
+[package]
+name = "nukm-cli"
+description = "Command-line interface for Nukm"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+homepage.workspace = true
+readme.workspace = true
+
+[[bin]]
+name = "nukm"
+path = "src/main.rs"
+
+[lints]
+workspace = true
+
+[dependencies]
+nukm-core = { path = "../nukm-core" }

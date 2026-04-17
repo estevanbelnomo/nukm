@@ -1,0 +1,17 @@
+/target
+/dist
+/.nukm-cache
+
+# Editor
+/.idea
+/.vscode
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local environment
+.env
+.env.local

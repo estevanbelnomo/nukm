@@ -1,0 +1,18 @@
+[package]
+name = "nukm-core"
+description = "Core library for Nukm: manifest-aware, git-aware developer disk reclaim engine"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+homepage.workspace = true
+readme.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+
+[dev-dependencies]

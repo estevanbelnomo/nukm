@@ -1,0 +1,19 @@
+# Normalise line endings across platforms.
+# Repo stores LF; Windows checkouts still get CRLF for tools that need it.
+* text=auto eol=lf
+
+# Explicit overrides for text files produced by this project.
+*.rs    text eol=lf
+*.toml  text eol=lf
+*.md    text eol=lf
+*.yml   text eol=lf
+*.yaml  text eol=lf
+*.json  text eol=lf
+*.sh    text eol=lf
+
+# Anything that must stay binary.
+*.png   binary
+*.jpg   binary
+*.ico   binary
+*.exe   binary
+*.dll   binary
