@@ -14,5 +14,9 @@ readme.workspace = true
 workspace = true
 
 [dependencies]
+thiserror.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tracing.workspace = true
 
 [dev-dependencies]

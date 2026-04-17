@@ -20,7 +20,26 @@ unsafe_code = "forbid"
 missing_docs = "warn"
 
 [workspace.lints.clippy]
+all = { level = "warn", priority = -1 }
 pedantic = { level = "warn", priority = -1 }
-nursery = { level = "warn", priority = -1 }
 unwrap_used = "warn"
 expect_used = "warn"
+# C-phase skeleton allowances; tighten in B1 when real errors, panics, and return
+# values exist to document. See ADR-0001.
+todo = "allow"
+missing_errors_doc = "allow"
+missing_panics_doc = "allow"
+must_use_candidate = "allow"
+module_name_repetitions = "allow"
+# Doc comments in Nukm are prose-heavy and mention proper nouns freely
+# (Docker, Tauri, BuildKit, WSL, APFS, ...). Backticking every one is noise.
+doc_markdown = "allow"
+
+[workspace.dependencies]
+nukm-core = { path = "crates/nukm-core" }
+
+thiserror = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+clap = { version = "4", features = ["derive"] }
+tracing = "0.1"
