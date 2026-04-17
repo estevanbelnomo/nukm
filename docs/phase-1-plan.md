@@ -63,7 +63,7 @@ Deliverables:
 - [ ] Git safety gate via `git2` (clean state check, stash check)
 - [ ] `trash` crate integration
 - [ ] Destructive operations require `--execute`; absence implies dry-run. No `--dry-run` flag exists.
-- [ ] Dry-run output clearly marked: per-line `[DRY-RUN]` prefix and header banner (`DRY RUN: no changes will be made. Pass --execute to apply.`) at the top of every scan output.
+- [ ] Dry-run output clearly marked: per-line `[DRY-RUN]` prefix and header banner (`DRY RUN — no changes will be made. Pass --execute to apply.`) at the top of every scan output.
 - [ ] `nukm scan` and `nukm clean` for Rust only
 - [ ] Integration tests with `assert_fs` fixtures
 - [ ] `tests/corpus/` scaffold; Rust fixtures (clean, dirty-git, stashed, ancient > 90d, recent < 7d)
